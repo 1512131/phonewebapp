@@ -1,0 +1,19 @@
+#logo-link {
+	background-color: white;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#logo-image {
+	 width: 120px;
+	 height: 46px;
+	 margin-top: -12px
+}
+
+#search-box {
+	width: 400px
+}
+
+.dropdown:hover>.dropdown-menu {
+	display: block;
+}

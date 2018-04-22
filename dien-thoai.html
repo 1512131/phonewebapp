@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Trang chủ</title>
+	<title>Điện thoại</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/dien-thoai.css">
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
 </head>
@@ -19,7 +20,7 @@
 				<div class="input-group">
 					<input  id="search-box" type="text" class="form-control" placeholder="Bạn tìm gì...">
 					<div class="input-group-btn">
-						<button class="btn btn-default" type="submit">
+						<button class="btn btn-default" type="submit" onclick="search()">
 							<i class="glyphicon glyphicon-search"></i>
 						</button>
 					</div>
@@ -27,15 +28,15 @@
 			</form>
 			<ul class="nav navbar-nav">
 				<li class="dropdown">
-					<a id="phone" class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<a id="phone" class="dropdown-toggle" data-toggle="dropdown" href="dien-thoai.html">
 						ĐIỆN THOẠI
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Apple</a></li>
-						<li><a href="#">Samsung</a></li>
-						<li><a href="#">Oppo</a></li>
-						<li><a href="#">Sony</a></li>
-						<li><a href="#">Vivo</a></li>
+						<li><a href="#" onclick="showPhone('apple')">Apple</a></li>
+						<li><a href="#" onclick="showPhone('samsung')">Samsung</a></li>
+						<li><a href="#" onclick="showPhone('oppo')">Oppo</a></li>
+						<li><a href="#" onclick="showPhone('sony')">Sony</a></li>
+						<li><a href="#" onclick="showPhone('vivo')">Vivo</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -62,92 +63,92 @@
 
 
 		<div class="row">
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">14/1/2018</span>
-					<span name="so-luong-ban" class="hidden">1605</span>
-					<span name="so-luot-xem" class="hidden">6049</span>
-					<span name="nha-san-xuat" class="hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipx.png">
+					<span class="ngay-tiep-nhan hidden">14/1/2018</span>
+					<span class="so-luong-ban hidden">1605</span>
+					<span class="so-luot-xem hidden">6049</span>
+					<span class="nha-san-xuat hidden">apple</span>
+					<img class="card-img-top" src="assets/image/ipx/ipx.png">
 					<div class="card-body">
 						<h5 class="card-title">iPhone X 64GB</h5>
 						<p class="price">
 							<strong>29.990.000₫</strong>
 						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
+						<a href="iphone-x.html" class="btn btn-primary">Chi tiết</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">10/12/2017</span>
-					<span name="so-luong-ban" class="hidden">857</span>
-					<span name="so-luot-xem" class="hidden">3478</span>
-					<span name="nha-san-xuat" class="hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip8+.png">
+					<span class="ngay-tiep-nhan hidden">10/12/2017</span>
+					<span class="so-luong-ban hidden">857</span>
+					<span class="so-luot-xem hidden">3478</span>
+					<span class="nha-san-xuat hidden">apple</span>
+					<img class="card-img-top" src="assets/image/ip8+/ip8+.png">
 					<div class="card-body">
 						<h5 class="card-title">iPhone 8 Plus 64GB</h5>
 						<p class="price">
 							<strong>23.990.000₫</strong>
 						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
+						<a href="iphone-8-plus.html" class="btn btn-primary">Chi tiết</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">6/11/2017</span>
-					<span name="so-luong-ban" class="hidden">345</span>
-					<span name="so-luot-xem" class="hidden">4131</span>
-					<span name="nha-san-xuat" class="hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip8.png">
+					<span class="ngay-tiep-nhan hidden">6/11/2017</span>
+					<span class="so-luong-ban hidden">345</span>
+					<span class="so-luot-xem hidden">4131</span>
+					<span class="nha-san-xuat hidden">apple</span>
+					<img class="card-img-top" src="assets/image/ip8/ip8.png">
 					<div class="card-body">
 						<h5 class="card-title">iPhone 8 64GB</h5>
 						<p class="price">
 							<strong>20.990.000₫</strong>
 						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
+						<a href="iphone-8.html" class="btn btn-primary">Chi tiết</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">21/04/2018</span>
-					<span name="so-luong-ban" class="hidden">208</span>
-					<span name="so-luot-xem" class="hidden">3058</span>
-					<span name="nha-san-xuat" class="hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip7+.png">
+					<span class="ngay-tiep-nhan hidden">21/04/2018</span>
+					<span class="so-luong-ban hidden">208</span>
+					<span class="so-luot-xem hidden">3058</span>
+					<span class="nha-san-xuat hidden">apple</span>
+					<img class="card-img-top" src="assets/image/ip7+/ip7+.png">
 					<div class="card-body">
 						<h5 class="card-title">iPhone 7 Plus 32GB</h5>
 						<p class="price">
 							<strong>19.999.000₫</strong>
 						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
+						<a href="iphone-7-plus.html" class="btn btn-primary">Chi tiết</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">21/04/2017</span>
-					<span name="so-luong-ban" class="hidden">547</span>
-					<span name="so-luot-xem" class="hidden">2683</span>
-					<span name="nha-san-xuat" class="hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip7.png">
+					<span class="ngay-tiep-nhan hidden">21/04/2017</span>
+					<span class="so-luong-ban hidden">547</span>
+					<span class="so-luot-xem hidden">4683</span>
+					<span class="nha-san-xuat hidden">apple</span>
+					<img class="card-img-top" src="assets/image/ip7/ip7.png">
 					<div class="card-body">
 						<h5 class="card-title">iPhone 7 32GB</h5>
 						<p class="price">
 							<strong>15.999.000₫</strong>
 						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
+						<a href="iphone-7.html" class="btn btn-primary">Chi tiết</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">6/03/2018</span>
-					<span name="so-luong-ban" class="hidden">608</span>
-					<span name="so-luot-xem" class="hidden">4526</span>
-					<span name="nha-san-xuat" class="hidden">samsung</span>
+					<span class="ngay-tiep-nhan hidden">6/03/2018</span>
+					<span class="so-luong-ban hidden">608</span>
+					<span class="so-luot-xem hidden">4526</span>
+					<span class="nha-san-xuat hidden">samsung</span>
 					<img class="card-img-top" src="assets/image/sas9+.png">
 					<div class="card-body">
 						<h5 class="card-title">Samsung Galaxy S9+</h5>
@@ -158,12 +159,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">1/04/2018</span>
-					<span name="so-luong-ban" class="hidden">486</span>
-					<span name="so-luot-xem" class="hidden">3572</span>
-					<span name="nha-san-xuat" class="hidden">samsung</span>
+					<span class="ngay-tiep-nhan hidden">1/04/2018</span>
+					<span class="so-luong-ban hidden">486</span>
+					<span class="so-luot-xem hidden">3572</span>
+					<span class="nha-san-xuat hidden">samsung</span>
 					<img class="card-img-top" src="assets/image/sas9.png">
 					<div class="card-body">
 						<h5 class="card-title">Samsung Galaxy S9</h5>
@@ -174,12 +175,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">15/01/2018</span>
-					<span name="so-luong-ban" class="hidden">328</span>
-					<span name="so-luot-xem" class="hidden">2954</span>
-					<span name="nha-san-xuat" class="hidden">samsung</span>
+					<span class="ngay-tiep-nhan hidden">15/01/2018</span>
+					<span class="so-luong-ban hidden">328</span>
+					<span class="so-luot-xem hidden">2954</span>
+					<span class="nha-san-xuat hidden">samsung</span>
 					<img class="card-img-top" src="assets/image/saa8+.png">
 					<div class="card-body">
 						<h5 class="card-title">Samsung Galaxy S8 Plus</h5>
@@ -190,12 +191,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">12/01/2018</span>
-					<span name="so-luong-ban" class="hidden">563</span>
-					<span name="so-luot-xem" class="hidden">4565</span>
-					<span name="nha-san-xuat" class="hidden">samsung</span>
+					<span class="ngay-tiep-nhan hidden">12/01/2018</span>
+					<span class="so-luong-ban hidden">563</span>
+					<span class="so-luot-xem hidden">4565</span>
+					<span class="nha-san-xuat hidden">samsung</span>
 					<img class="card-img-top" src="assets/image/saa8.png">
 					<div class="card-body">
 						<h5 class="card-title">Samsung Galaxy S8</h5>
@@ -206,12 +207,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">21/01/2018</span>
-					<span name="so-luong-ban" class="hidden">167</span>
-					<span name="so-luot-xem" class="hidden">1982</span>
-					<span name="nha-san-xuat" class="hidden">samsung</span>
+					<span class="ngay-tiep-nhan hidden">21/01/2018</span>
+					<span class="so-luong-ban hidden">167</span>
+					<span class="so-luot-xem hidden">1982</span>
+					<span class="nha-san-xuat hidden">samsung</span>
 					<img class="card-img-top" src="assets/image/saN8.png">
 					<div class="card-body">
 						<h5 class="card-title">Samsung Galaxy Note 8</h5>
@@ -222,12 +223,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">9/02/2018</span>
-					<span name="so-luong-ban" class="hidden">385</span>
-					<span name="so-luot-xem" class="hidden">2832</span>
-					<span name="nha-san-xuat" class="hidden">oppo</span>
+					<span class="ngay-tiep-nhan hidden">9/02/2018</span>
+					<span class="so-luong-ban hidden">385</span>
+					<span class="so-luot-xem hidden">2832</span>
+					<span class="nha-san-xuat hidden">oppo</span>
 					<img class="card-img-top" src="assets/image/opf7.jpg">
 					<div class="card-body">
 						<h5 class="card-title">Oppo F7</h5>
@@ -238,12 +239,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">19/12/2017</span>
-					<span name="so-luong-ban" class="hidden">182</span>
-					<span name="so-luot-xem" class="hidden">1862</span>
-					<span name="nha-san-xuat" class="hidden">oppo</span>
+					<span class="ngay-tiep-nhan hidden">19/12/2017</span>
+					<span class="so-luong-ban hidden">182</span>
+					<span class="so-luot-xem hidden">1862</span>
+					<span class="nha-san-xuat hidden">oppo</span>
 					<img class="card-img-top" src="assets/image/opf5.png">
 					<div class="card-body">
 						<h5 class="card-title">Oppp F5</h5>
@@ -254,12 +255,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">16/09/2017</span>
-					<span name="so-luong-ban" class="hidden">348</span>
-					<span name="so-luot-xem" class="hidden">3258</span>
-					<span name="nha-san-xuat" class="hidden">oppo</span>
+					<span class="ngay-tiep-nhan hidden">16/09/2017</span>
+					<span class="so-luong-ban hidden">348</span>
+					<span class="so-luot-xem hidden">3258</span>
+					<span class="nha-san-xuat hidden">oppo</span>
 					<img class="card-img-top" src="assets/image/opf3.png">
 					<div class="card-body">
 						<h5 class="card-title">Oppo F3</h5>
@@ -270,12 +271,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">25/10/2017</span>
-					<span name="so-luong-ban" class="hidden">657</span>
-					<span name="so-luot-xem" class="hidden">8342</span>
-					<span name="nha-san-xuat" class="hidden">oppo</span>
+					<span class="ngay-tiep-nhan hidden">25/10/2017</span>
+					<span class="so-luong-ban hidden">657</span>
+					<span class="so-luot-xem hidden">8342</span>
+					<span class="nha-san-xuat hidden">oppo</span>
 					<img class="card-img-top" src="assets/image/opf1s.png">
 					<div class="card-body">
 						<h5 class="card-title">Oppo F1s</h5>
@@ -286,12 +287,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">18/7/2017</span>
-					<span name="so-luong-ban" class="hidden">268</span>
-					<span name="so-luot-xem" class="hidden">2430</span>
-					<span name="nha-san-xuat" class="hidden">oppo</span>
+					<span class="ngay-tiep-nhan hidden">18/7/2017</span>
+					<span class="so-luong-ban hidden">268</span>
+					<span class="so-luot-xem hidden">2430</span>
+					<span class="nha-san-xuat hidden">oppo</span>
 					<img class="card-img-top" src="assets/image/opa83.png">
 					<div class="card-body">
 						<h5 class="card-title">Oppo A83</h5>
@@ -302,12 +303,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">28/2/2018</span>
-					<span name="so-luong-ban" class="hidden">156</span>
-					<span name="so-luot-xem" class="hidden">1862</span>
-					<span name="nha-san-xuat" class="hidden">sony</span>
+					<span class="ngay-tiep-nhan hidden">28/2/2018</span>
+					<span class="so-luong-ban hidden">156</span>
+					<span class="so-luot-xem hidden">1862</span>
+					<span class="nha-san-xuat hidden">sony</span>
 					<img class="card-img-top" src="assets/image/soxz1.png">
 					<div class="card-body">
 						<h5 class="card-title">Sony Xperia XZ1</h5>
@@ -318,12 +319,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">22/1/2018</span>
-					<span name="so-luong-ban" class="hidden">196</span>
-					<span name="so-luot-xem" class="hidden">2648</span>
-					<span name="nha-san-xuat" class="hidden">sony</span>
+					<span class="ngay-tiep-nhan hidden">22/1/2018</span>
+					<span class="so-luong-ban hidden">196</span>
+					<span class="so-luot-xem hidden">2648</span>
+					<span class="nha-san-xuat hidden">sony</span>
 					<img class="card-img-top" src="assets/image/soxzp.png">
 					<div class="card-body">
 						<h5 class="card-title">Sony Xperia XZ Premium</h5>
@@ -334,12 +335,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">14/11/2017</span>
-					<span name="so-luong-ban" class="hidden">145</span>
-					<span name="so-luot-xem" class="hidden">1962</span>
-					<span name="nha-san-xuat" class="hidden">sony</span>
+					<span class="ngay-tiep-nhan hidden">14/11/2017</span>
+					<span class="so-luong-ban hidden">145</span>
+					<span class="so-luot-xem hidden">1962</span>
+					<span class="nha-san-xuat hidden">sony</span>
 					<img class="card-img-top" src="assets/image/soxzs.png">
 					<div class="card-body">
 						<h5 class="card-title">Sony Xperia XZs</h5>
@@ -350,12 +351,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">8/10/2017</span>
-					<span name="so-luong-ban" class="hidden">82</span>
-					<span name="so-luot-xem" class="hidden">1285</span>
-					<span name="nha-san-xuat" class="hidden">sony</span>
+					<span class="ngay-tiep-nhan hidden">8/10/2017</span>
+					<span class="so-luong-ban hidden">82</span>
+					<span class="so-luot-xem hidden">1285</span>
+					<span class="nha-san-xuat hidden">sony</span>
 					<img class="card-img-top" src="assets/image/soxau.png">
 					<div class="card-body">
 						<h5 class="card-title">Sony Xperia XA Ultra</h5>
@@ -366,12 +367,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">16/8/2017</span>
-					<span name="so-luong-ban" class="hidden">503</span>
-					<span name="so-luot-xem" class="hidden">4582</span>
-					<span name="nha-san-xuat" class="hidden">sony</span>
+					<span class="ngay-tiep-nhan hidden">16/8/2017</span>
+					<span class="so-luong-ban hidden">503</span>
+					<span class="so-luot-xem hidden">4582</span>
+					<span class="nha-san-xuat hidden">sony</span>
 					<img class="card-img-top" src="assets/image/sol1d.png">
 					<div class="card-body">
 						<h5 class="card-title">Sony Xperia L1 Dual</h5>
@@ -382,15 +383,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">13/2/2018</span>
-					<span name="so-luong-ban" class="hidden">208</span>
-					<span name="so-luot-xem" class="hidden">1835</span>
-					<span name="nha-san-xuat" class="hidden">vivo</span>
+					<span class="ngay-tiep-nhan hidden">13/2/2018</span>
+					<span class="so-luong-ban hidden">208</span>
+					<span class="so-luot-xem hidden">1835</span>
+					<span class="nha-san-xuat hidden">vivo</span>
 					<img class="card-img-top" src="assets/image/viv9.jpg">
 					<div class="card-body">
-						<h5 class="card-title">vivo V9</h5>
+						<h5 class="card-title">Vivo V9</h5>
 						<p class="price">
 							<strong>7.990.000₫</strong>
 						</p>
@@ -398,15 +399,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">3/1/2018</span>
-					<span name="so-luong-ban" class="hidden">228</span>
-					<span name="so-luot-xem" class="hidden">1735</span>
-					<span name="nha-san-xuat" class="hidden">vivo</span>
+					<span class="ngay-tiep-nhan hidden">3/1/2018</span>
+					<span class="so-luong-ban hidden">228</span>
+					<span class="so-luot-xem hidden">1735</span>
+					<span class="nha-san-xuat hidden">vivo</span>
 					<img class="card-img-top" src="assets/image/viv7+.png">
 					<div class="card-body">
-						<h5 class="card-title">vivo V7+</h5>
+						<h5 class="card-title">Vivo V7+</h5>
 						<p class="price">
 							<strong>7.990.000₫</strong>
 						</p>
@@ -414,15 +415,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">3/12/2017</span>
-					<span name="so-luong-ban" class="hidden">157</span>
-					<span name="so-luot-xem" class="hidden">1204</span>
-					<span name="nha-san-xuat" class="hidden">vivo</span>
+					<span class="ngay-tiep-nhan hidden">3/12/2017</span>
+					<span class="so-luong-ban hidden">157</span>
+					<span class="so-luot-xem hidden">1204</span>
+					<span class="nha-san-xuat hidden">vivo</span>
 					<img class="card-img-top" src="assets/image/viv5s.png">
 					<div class="card-body">
-						<h5 class="card-title">vivo V7+</h5>
+						<h5 class="card-title">Vivo V7+</h5>
 						<p class="price">
 							<strong>6.690.000₫</strong>
 						</p>
@@ -430,15 +431,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">18/11/2017</span>
-					<span name="so-luong-ban" class="hidden">185</span>
-					<span name="so-luot-xem" class="hidden">1351</span>
-					<span name="nha-san-xuat" class="hidden">vivo</span>
+					<span class="ngay-tiep-nhan hidden">18/11/2017</span>
+					<span class="so-luong-ban hidden">185</span>
+					<span class="so-luot-xem hidden">1351</span>
+					<span class="nha-san-xuat hidden">vivo</span>
 					<img class="card-img-top" src="assets/image/viy69.png">
 					<div class="card-body">
-						<h5 class="card-title">vivo Y69</h5>
+						<h5 class="card-title">Vivo Y69</h5>
 						<p class="price">
 							<strong>5.490.000₫</strong>
 						</p>
@@ -446,15 +447,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 item">
 				<div class="card">
-					<span name="ngay-tiep-nhan" class="hidden">23/8/2017</span>
-					<span name="so-luong-ban" class="hidden">235</span>
-					<span name="so-luot-xem" class="hidden">2054</span>
-					<span name="nha-san-xuat" class="hidden">vivo</span>
+					<span class="ngay-tiep-nhan hidden">23/8/2017</span>
+					<span class="so-luong-ban hidden">235</span>
+					<span class="so-luot-xem hidden">2054</span>
+					<span class="nha-san-xuat hidden">vivo</span>
 					<img class="card-img-top" src="assets/image/viy55.png">
 					<div class="card-body">
-						<h5 class="card-title">vivo Y55</h5>
+						<h5 class="card-title">Vivo Y55</h5>
 						<p class="price">
 							<strong>3.990.000₫</strong>
 						</p>
@@ -468,9 +469,6 @@
 		<button id="page1">1</button>
 		<button id="page2">2</button>
 	</div>
-	</br>
-	</br>
-	</br>
 	<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
 	<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
