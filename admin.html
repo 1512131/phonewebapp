@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Quản trị</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/menu.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/dien-thoai.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/admin.css">
+		<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
+	</head>
+	<body style="background-color: whitesmoke">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3" id="btn_list">
+					<ul class="dashboard_list">
+						<li><button class="dashboard_button" id="btn_1" style="background-color: blue; color: white">Quản lý sản phẩm</button></li>
+						<li><button class="dashboard_button" id="btn_2">Quản lý danh mục</button></li>
+						<li><button class="dashboard_button" id="btn_3">Quản lý nhà sản xuất</button></li>
+						<li><button class="dashboard_button" id="btn_4">Quản lý đơn hàng</button></li>
+					</ul>
+				</div>
+				<div class="col-lg-9" id="pane" style="background-color: white">
+					<div id="pane_1">
+						<div class="row">
+							<table class="table table-hover table-bordered" id="table_product">
+								<thead>
+									<tr>
+										<th>STT</th>
+										<th>Tên sản phẩm</th>
+										<th>Ngày tiếp nhận</th>
+										<th>Số lượng bán</th>
+										<th>Số lượt xem</th>
+										<th>Danh mục</th>
+										<th>Nhà sản xuất</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr id="iphone-7.html" class="product_group_1">
+										<td>1</td>
+										<td>iPhone 7 Plus 32GB</td>
+										<td>21/04/2018</td>
+										<td>208</td>
+										<td>3058</td>
+										<td>Điện thoại</td>
+										<td>Apple</td>
+									</tr>
+									<tr id="iphone-x.html" class="product_group_1">
+										<td>2</td>
+										<td>iPhone X 64GB</td>
+										<td>14/1/2018</td>
+										<td>1605</td>
+										<td>6049</td>
+										<td>Điện thoại</td>
+										<td>Apple</td>
+									</tr>
+									<tr id="iphone-8-plus.html" class="product_group_1">
+										<td>3</td>
+										<td>iPhone 8 Plus 64GB</td>
+										<td>10/12/2017</td>
+										<td>857</td>
+										<td>3478</td>
+										<td>Điện thoại</td>
+										<td>Apple</td>
+									</tr>
+									<tr id="samsungtab-A-SM-T285.html" class="product_group_1">
+										<td>4</td>
+										<td>Samsung Galaxy Tab A SM-T285</td>
+										<td>10/2/2018</td>
+										<td>634</td>
+										<td>3908</td>
+										<td>Máy tính bảng</td>
+										<td>Samsung</td>
+									</tr>
+									<tr id="lenovotab-3-A8-ZA180001.html" class="product_group_1">
+										<td>5</td>
+										<td>LENOVO TAB 3 A8 ZA180001</td>
+										<td>10/12/2016</td>
+										<td>1015</td>
+										<td>4009</td>
+										<td>Máy tính bảng</td>
+										<td>Lenovo</td>
+									</tr>
+									<tr id="huaweitab-M3-8.0.html" class="product_group_2">
+										<td>6</td>
+										<td>Huawei MediaPad M3 8.0</td>
+										<td>29/6/2017</td>
+										<td>625</td>
+										<td>3009</td>
+										<td>Máy tính bảng</td>
+										<td>Huawei</td>
+									</tr>
+									<tr id="iPad-Pro-12.9.html" class="product_group_2">
+										<td>7</td>
+										<td>iPad Pro 12.9 WI-FI 4G 512GB</td>
+										<td>21/10/2017</td>
+										<td>618</td>
+										<td>3019</td>
+										<td>Máy tính bảng</td>
+										<td>Apple</td>
+									</tr>
+									<tr id="samsungtab-A6-10.1-spen.html" class="product_group_2">
+										<td>8</td>
+										<td>Samsung Galaxy Tab A6 10.1 Spen</td>
+										<td>10/10/2016</td>
+										<td>524</td>
+										<td>4106</td>
+										<td>Máy tính bảng</td>
+										<td>Samsung</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="row" style="padding: 20px">
+							<ul class="pagination" id="table_product_pagination">
+								<li><a>1</a></li>
+								<li><a>2</a></li>
+								<li><a>...</a></li>
+							</ul>
+						</div>
+						<div class="row">
+							<div id="add_product" class="col-lg-4">
+								<h3>Thêm sản phẩm</h3>
+								<div class="form-group">
+									<label for="product_name">Tên sản phẩm:</label>
+									<input type="text" class="form-control" id="product_name">
+								</div>
+								<div class="form-group">
+									<label for="product_category">Danh mục:</label>
+									<select class="form-control" id="product_category">
+										<option value="Điện thoại">Điện thoại</option>
+										<option value="Máy tính bảng">Máy tính bảng</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="product_producer">Nhà sản xuất:</label>
+									<input type="text" class="form-control" id="product_producer">
+								</div>
+								<button id="btn_add_product" type="button" class="btn btn-success">Thêm</button>
+							</div>
+						</div>
+					</div>
+					<div id="pane_2">
+						<div class="row">
+							<table class="table table-hover table-bordered" id="table_category">
+								<thead>
+									<tr>
+										<th>STT</th>
+										<th>Tên danh mục</th>
+										<th>Số sản phẩm</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Điện thoại</td>
+										<td>25</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Máy tính bảng</td>
+										<td>25</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="pane_3">
+						<div class="row">
+							<table class="table table-hover table-bordered" id="table_producer">
+								<thead>
+									<tr>
+										<th>STT</th>
+										<th>Nhà sản xuất</th>
+										<th>Số sản phẩm</th>
+										<th>Danh mục</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Apple</td>
+										<td>10</td>
+										<td>Điện thoại, Máy tính bảng</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Samsung</td>
+										<td>10</td>
+										<td>Điện thoại, Máy tính bảng</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Oppo</td>
+										<td>5</td>
+										<td>Điện thoại</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Sony</td>
+										<td>5</td>
+										<td>Điện thoại</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>Vivo</td>
+										<td>5</td>
+										<td>Điện thoại</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>Lenovo</td>
+										<td>5</td>
+										<td>Máy tính bảng</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>Masstel</td>
+										<td>5</td>
+										<td>Máy tính bảng</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>Huawei</td>
+										<td>5</td>
+										<td>Máy tính bảng</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="pane_4">
+						<div class="row">
+							<table class="table table-hover table-bordered" id="table_order">
+								<thead>
+									<tr>
+										<th>STT</th>
+										<th>Mã đơn hàng</th>
+										<th>Ngày lập</th>
+										<th>Tình trạng</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="danger">
+										<td>1</td>
+										<td>P20042018003</td>
+										<td>20/04/2018</td>
+										<td>Chưa giao</td>
+									</tr>
+									<tr class="danger">
+										<td>2</td>
+										<td>P20042018002</td>
+										<td>20/04/2018</td>
+										<td>Chưa giao</td>
+									</tr>
+									<tr class="warning">
+										<td>3</td>
+										<td>P20042018001</td>
+										<td>20/04/2018</td>
+										<td>Đang giao</td>
+									</tr>
+									<tr class="success">
+										<td>4</td>
+										<td>T19042018001</td>
+										<td>19/04/2018</td>
+										<td>Đã giao</td>
+									</tr>
+									<tr class="warning">
+										<td>5</td>
+										<td>T15042018001</td>
+										<td>15/04/2018</td>
+										<td>Đang giao</td>
+									</tr>
+									<tr class="warning">
+										<td>6</td>
+										<td>T14042018003</td>
+										<td>14/04/2018</td>
+										<td>Đang giao</td>
+									</tr>
+									<tr class="success">
+										<td>7</td>
+										<td>M14042018002</td>
+										<td>14/04/2018</td>
+										<td>Đã giao</td>
+									</tr>
+									<tr class="danger">
+										<td>8</td>
+										<td>M14042018001</td>
+										<td>14/04/2018</td>
+										<td>Chưa giao</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
+		<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/menu.js"></script>
+		<script type="text/javascript" src="assets/js/admin.js"></script>
+	</body>
+</html>

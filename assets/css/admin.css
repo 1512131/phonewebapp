@@ -1,0 +1,11 @@
+.dashboard_list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.dashboard_button{
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	color: black;
+}

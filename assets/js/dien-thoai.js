@@ -2,6 +2,34 @@ $(document).ready(function()
 {
 	showFrom(0);
 	$("#page1").attr('disabled','disabled');
+
+	$("#page1").bind("click",function () {
+		$("#page2").removeAttr('disabled');
+		showFrom(0);
+		$("#page1").attr('disabled','disabled');
+	});
+
+	$("#page2").bind("click",function () {
+		$("#page1").removeAttr('disabled');
+		showFrom(16);
+		$("#page2").attr('disabled','disabled');
+	});
+
+	$("#page3").bind("click",function () {
+		$("#page1").removeAttr('disabled');
+		$("#page2").removeAttr('disabled');
+		$("#page4").removeAttr('disabled');
+		showFrom(32);
+		$("#page3").attr('disabled','disabled');
+	});
+
+	$("#page4").bind("click",function () {
+		$("#page1").removeAttr('disabled');
+		$("#page2").removeAttr('disabled');
+		$("#page3").removeAttr('disabled');
+		showFrom(48);
+		$("#page4").attr('disabled','disabled');
+	});
 });
 
 function hideAll() {
@@ -19,33 +47,7 @@ function showFrom(index) {
 	}
 }
 
-$("#page1").bind("click",function () {
-	$("#page2").removeAttr('disabled');
-	showFrom(0);
-	$("#page1").attr('disabled','disabled');
-});
 
-$("#page2").bind("click",function () {
-		$("#page1").removeAttr('disabled');
-		showFrom(16);
-		$("#page2").attr('disabled','disabled');
-});
-
-$("#page3").bind("click",function () {
-		$("#page1").removeAttr('disabled');
-		$("#page2").removeAttr('disabled');
-		$("#page4").removeAttr('disabled');
-		showFrom(32);
-		$("#page3").attr('disabled','disabled');
-});
-
-$("#page4").bind("click",function () {
-		$("#page1").removeAttr('disabled');
-		$("#page2").removeAttr('disabled');
-		$("#page3").removeAttr('disabled');
-		showFrom(48);
-		$("#page4").attr('disabled','disabled');
-});
 
 function search() {
 	if ($('#search-box').val().length == 0) {
