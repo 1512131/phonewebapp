@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Điện thoại</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/gio-hang.css">
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body style="background-color: whitesmoke">
+	<nav id="navbar" class="navbar navbar-inverse navbar-static-top"">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a id="logo-link" class="navbar-brand" href="index.html">
+					<img id="logo-image" src="assets/image/logo.png">
+				</a>
+			</div>
+			<form class="navbar-form navbar-left" action="/action_page.php">
+				<div class="input-group hidden">
+					<input  id="search-box" type="text" class="form-control" placeholder="Bạn tìm gì...">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit" onclick="search()">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a id="phone" class="dropdown-toggle" data-toggle="dropdown" href="dien-thoai-chon-mua.html">
+						ĐIỆN THOẠI
+					</a>
+					<ul class="dropdown-menu hidden">
+						<li><a href="#" onclick="showPhone('apple')">Apple</a></li>
+						<li><a href="#" onclick="showPhone('samsung')">Samsung</a></li>
+						<li><a href="#" onclick="showPhone('oppo')">Oppo</a></li>
+						<li><a href="#" onclick="showPhone('sony')">Sony</a></li>
+						<li><a href="#" onclick="showPhone('vivo')">Vivo</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a id="tablet" class="dropdown-toggle" data-toggle="dropdown" href="#">
+						MÁY TÍNH BẢNG
+					</a>
+					<ul class="dropdown-menu hidden">
+						<li><a href="#">Apple</a></li>
+						<li><a href="#">Samsung</a></li>
+						<li><a href="#">Lenovo</a></li>
+						<li><a href="#">Masstel</a></li>
+						<li><a href="#">Huawei</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="gio-hang.html">GIỎ HÀNG</a>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						TÀI KHOẢN CUSTOMER
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#" onclick="">Cập nhật thông tin</a></li>
+						<li><a href="#" onclick="">Lịch sử mua hàng</a></li>
+						<li><a href="#" onclick="">Đăng xuất</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container gh-body">
+		<h3 class="gh-header">GIỎ HÀNG CỦA BẠN</h3>
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="gh-table">
+					<table width=100%>
+						<tr>
+							<td width=20%>
+								<a href="iphone-x.html">
+									<img class="gh-table-image" src="assets/image/ipx/front.jpg">
+								</a>
+							</td>
+							<td width=40%>
+								<h3 class="gh-table-name">
+									<a href="iphone-x.html">iPhone X 64GB</a>
+								</h3>
+							</td>
+							<td width=20%>
+								<span class="gh-table-price">29.990.000₫</span>
+							</td>
+							<td width=15%>
+								<div class="gh-table-count">
+									<span class="gh-table-count-btn" onclick="decrease(this)">-</span>
+									<input name="a" class="gh-table-count-ip" readonly="readonly" value="1" placeholder="0" type="text">
+									<span class="gh-table-count-btn" onclick="increase(this)">+</span>
+								</div>
+							</td>
+							<td width=5%>
+								<span class="glyphicon glyphicon-remove" onclick="removeRow(this)"></span>
+							</td>
+						</tr>
+						<tr>
+							<td width=20%>
+								<a href="iphone-8-plus.html">
+									<img class="gh-table-image" src="assets/image/ip8+/front.jpg">
+								</a>
+							</td>
+							<td width=40%>
+								<h3 class="gh-table-name">
+									<a href="iphone-8-plus.html">iPhone 8 Plus 64GB</a>
+								</h3>
+							</td>
+							<td width=20%>
+								<span class="gh-table-price">23.990.000₫</span>
+							</td>
+							<td width=15%>
+								<div class="gh-table-count">
+									<span class="gh-table-count-btn" onclick="decrease(this)">-</span>
+									<input class="gh-table-count-ip" readonly="readonly" value="1" placeholder="0" type="text">
+									<span class="gh-table-count-btn" onclick="increase(this)">+</span>
+								</div>
+							</td>
+							<td width=5%>
+								<span class="glyphicon glyphicon-remove" onclick="removeRow(this)"></span>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="gh-total">
+					<div class="row">
+						<div class="col-lg-6">
+							<h4>Tổng cộng:</h4>
+						</div>
+						<div class="col-lg-6 gh-money">
+							<h4><strong id="sum">0₫</strong></h4>
+						</div>
+					</div>
+				</div>
+				<button  id="ghid-total-btn" type="button" class="btn btn-danger btn-lg" onclick="">Tiến hành thanh toán</button>
+			</div>
+		</div>
+	</div>
+	<div class="container gh-empty">
+		<p>
+			<img src="assets/image/empty-cart.png">
+		</p>
+		<p class="gh-empty-notice">Không có sản phẩm nào trong giỏ hàng của bạn</p>
+		<a class="btn btn-success gh-empty-btn" href="index.html">ĐẾN TRANG CHỦ</a>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/gio-hang.js"></script>
+</body>
+</html>

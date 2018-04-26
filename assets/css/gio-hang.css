@@ -1,0 +1,107 @@
+.gh-header {
+    color: #3d3d3d;
+	margin-bottom: 20px;
+}
+
+.gh-table {
+    background-color: white;
+}
+
+.gh-table-image {
+    width: 100px;
+    margin: 20px;
+    padding: 0;
+    border: 1px solid whitesmoke;
+}
+
+.gh-table td {
+    border-bottom: 2px solid whitesmoke;
+}
+
+.gh-table-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.gh-table-name a:hover, .gh-table-name a:visited, .gh-table-name a:link, .gh-table-name a:active {
+    text-decoration: none;
+    color: #4a4a4a;
+}
+
+.gh-table-price {
+    font-size: 16px;
+    color: #3d3d3d;
+    margin-bottom: 5px;
+}
+
+.gh-table-count {
+    width: 100%;
+    display: table;
+}
+
+.gh-table-count-btn {
+    float: left;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #828282;
+    font-size: 22px;
+    background-color: #f8f8f8;
+    border: solid 1px #dfdfdf;
+}
+
+.gh-table-count-ip {
+    float: left;
+    width: 40px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    border: solid 1px #e0e0e0;
+    border-left: none;
+    border-right: none;
+}
+
+.gh-total {
+	background-color: white;
+	padding: 10px;
+}
+
+.gh-money {
+	text-align: right;
+	color: #d0011b;;
+}
+
+#ghid-total-btn {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.glyphicon-remove {
+    cursor: pointer;
+    color: #b8b8b8;
+    font-size: 12px;
+}
+
+.gh-empty {
+    background-color: white;
+    text-align: center;
+    padding: 50px;
+    margin: 100px;
+}
+
+.gh-empty-notice {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.gh-empty-btn {
+    font-size: 15px !important;
+    width: 250px;
+}

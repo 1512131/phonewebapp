@@ -17,10 +17,17 @@
 }
 
 #price {
+	text-align: left;
 	font-size: 24px;
 	margin-top: 15px;
 	color: red;
 }
+
+.ct-btn {
+	margin-top: 8px;
+	width: 100%;
+}
+
 .large {
 	width: 500px;
 }

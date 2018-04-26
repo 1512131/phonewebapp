@@ -1,0 +1,44 @@
+.pane-header {
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+.container-custom {
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
+.white-background {
+	background-color: white;
+	padding: 30px;
+}
+
+.error-message {
+	color: red;
+	font-style: italic;
+	font-size: 12px;
+	margin-bottom: 40px;
+}
+
+.g-recaptcha {
+	margin-top: 54px;
+}
+
+.box {
+	height: 40px !important;
+}
+
+#username-title {
+	margin-bottom: 4px;
+}
+
+#password-title {
+	margin-top: 30px;
+	margin-bottom: 4px;
+}
+
+#btn-sign-in {
+	margin-top: 30px;
+	width: 100%;
+	height: 40px;
+}

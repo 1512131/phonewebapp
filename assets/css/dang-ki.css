@@ -1,0 +1,71 @@
+.pane-header {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.container-custom {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.white-background {
+	background-color: white;
+	padding: 30px;
+}
+
+.head-box-title {
+	margin-bottom: 4px;
+}
+
+.box-title {
+	margin-top: 30px;
+	margin-bottom: 4px;
+}
+
+.row.no-gutter {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.box {
+	height: 40px !important;
+}
+
+#day {
+	width: 70px;
+}
+
+#month {
+	width: 70px;
+}
+
+#year {
+	width: 120px;
+}
+
+#male {
+	width: 100%;
+}
+
+#btn-sign-up {
+	margin-top: 36px;
+	width: 100%;
+	height: 40px;
+}
+
+.error-message {
+	color: red;
+	font-style: italic;
+	font-size: 12px;
+	margin-bottom: 40px;
+}
+
+.g-recaptcha {
+	margin-top: 54px;
+}
