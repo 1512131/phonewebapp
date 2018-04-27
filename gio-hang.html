@@ -9,66 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
 </head>
 <body style="background-color: whitesmoke">
-	<nav id="navbar" class="navbar navbar-inverse navbar-static-top"">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a id="logo-link" class="navbar-brand" href="index.html">
-					<img id="logo-image" src="assets/image/logo.png">
-				</a>
-			</div>
-			<form class="navbar-form navbar-left" action="/action_page.php">
-				<div class="input-group hidden">
-					<input  id="search-box" type="text" class="form-control" placeholder="Bạn tìm gì...">
-					<div class="input-group-btn">
-						<button class="btn btn-default" type="submit" onclick="search()">
-							<i class="glyphicon glyphicon-search"></i>
-						</button>
-					</div>
-				</div>
-			</form>
-			<ul class="nav navbar-nav">
-				<li class="dropdown">
-					<a id="phone" class="dropdown-toggle" data-toggle="dropdown" href="dien-thoai-chon-mua.html">
-						ĐIỆN THOẠI
-					</a>
-					<ul class="dropdown-menu hidden">
-						<li><a href="#" onclick="showPhone('apple')">Apple</a></li>
-						<li><a href="#" onclick="showPhone('samsung')">Samsung</a></li>
-						<li><a href="#" onclick="showPhone('oppo')">Oppo</a></li>
-						<li><a href="#" onclick="showPhone('sony')">Sony</a></li>
-						<li><a href="#" onclick="showPhone('vivo')">Vivo</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a id="tablet" class="dropdown-toggle" data-toggle="dropdown" href="#">
-						MÁY TÍNH BẢNG
-					</a>
-					<ul class="dropdown-menu hidden">
-						<li><a href="#">Apple</a></li>
-						<li><a href="#">Samsung</a></li>
-						<li><a href="#">Lenovo</a></li>
-						<li><a href="#">Masstel</a></li>
-						<li><a href="#">Huawei</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a class="dropdown-toggle" data-toggle="dropdown" href="gio-hang.html">GIỎ HÀNG</a>
-				</li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						TÀI KHOẢN CUSTOMER
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="#" onclick="">Cập nhật thông tin</a></li>
-						<li><a href="#" onclick="">Lịch sử mua hàng</a></li>
-						<li><a href="#" onclick="">Đăng xuất</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<div class="menu-mua-hang"></div>
 	<div class="container gh-body">
 		<h3 class="gh-header">GIỎ HÀNG CỦA BẠN</h3>
 		<div class="row">
@@ -154,6 +95,7 @@
 	<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
 	<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/menu-mua-hang.js"></script>
 	<script type="text/javascript" src="assets/js/gio-hang.js"></script>
 </body>
 </html>
