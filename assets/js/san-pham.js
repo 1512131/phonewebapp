@@ -74,6 +74,159 @@ $(document).ready(function()
 	}
 });
 
+function searchByFilter() {
+	var name = $('#filter_name').val().toLowerCase();
+	var cat_phone = $('#cat_phone').is(':checked');
+	var cat_tablet = $('#cat_tablet').is(':checked');
+
+	var pro_arr = [];
+	if ($('#pro_apple').is(':checked')) {
+		pro_arr.push('apple');
+	}
+	if ($('#pro_samsung').is(':checked')) {
+		pro_arr.push('samsung');
+	}
+	if ($('#pro_oppo').is(':checked')) {
+		pro_arr.push('oppo');
+	}
+	if ($('#pro_sony').is(':checked')) {
+		pro_arr.push('sony');
+	}
+	if ($('#pro_vivo').is(':checked')) {
+		pro_arr.push('vivo');
+	}
+	if ($('#pro_lenovo').is(':checked')) {
+		pro_arr.push('lenovo');
+	}
+	if ($('#pro_masstel').is(':checked')) {
+		pro_arr.push('masstel');
+	}
+	if ($('#pro_huawei').is(':checked')) {
+		pro_arr.push('huawei');
+	}
+
+	var price_arr = [];
+	if ($('#1m').is(':checked')) {
+		price_arr.push('1m');
+	}
+	if ($('#1-5m').is(':checked')) {
+		price_arr.push('1-5m');
+	}
+	if ($('#5-10m').is(':checked')) {
+		price_arr.push('5-10m');
+	}
+	if ($('#10-15m').is(':checked')) {
+		price_arr.push('10-15m');
+	}
+	if ($('#15m').is(':checked')) {
+		price_arr.push('15m');
+	}
+
+	for (var i = 0; i < $(".dien-thoai").size(); i++) {
+		$(".dien-thoai").get(i).style.display = "none";
+	}
+	for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+		$(".may-tinh-bang").get(i).style.display = "none";
+	}
+	for (var i = 0; i < $(".dien-thoai").size(); i++) {
+		var select = ".dien-thoai:eq(" + i + ")";
+		var pName = $(select).find('h5').html();
+		pName = pName.toLowerCase();
+		if (pName.indexOf(name) != -1){
+			$(".dien-thoai").get(i).style.display = "inline-block";
+		}
+	}
+
+	for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+		var select = ".may-tinh-bang:eq(" + i + ")";
+		var pName = $(select).find('h5').html();
+		pName = pName.toLowerCase();
+		if (pName.indexOf(name) != -1){
+			$(".may-tinh-bang").get(i).style.display = "inline-block";
+		}
+	}
+
+	if (cat_phone == true || cat_tablet == true) {
+		if (cat_tablet == false) {
+			for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+				$(".may-tinh-bang").get(i).style.display = "none";		
+			}
+		}
+		if (cat_phone == false) {
+			for (var i = 0; i < $(".dien-thoai").size(); i++) {
+				$(".dien-thoai").get(i).style.display = "none";		
+			}
+		}
+	}
+
+	if (pro_arr.length > 0) {
+		for (var i = 0; i < $(".dien-thoai").size(); i++) {
+			var select = ".dien-thoai:eq(" + i + ")";
+			var pPro = $(select).find('.nha-san-xuat').html();
+			if (pro_arr.indexOf(pPro) == -1){
+				$(".dien-thoai").get(i).style.display = "none";
+			}
+		}
+
+		for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+			var select = ".may-tinh-bang:eq(" + i + ")";
+			var pPro = $(select).find('.nha-san-xuat').html();
+			if (pro_arr.indexOf(pPro) == -1){
+				$(".may-tinh-bang").get(i).style.display = "none";
+			}
+		}
+	}
+
+	if (price_arr.length > 0) {
+		for (var i = 0; i < $(".dien-thoai").size(); i++) {
+			var select = ".dien-thoai:eq(" + i + ")";
+			var pPrice = $(select).find('.price-level').html();
+			if (price_arr.indexOf(pPrice) == -1){
+				$(".dien-thoai").get(i).style.display = "none";
+			}
+		}
+
+		for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+			var select = ".may-tinh-bang:eq(" + i + ")";
+			var pPrice = $(select).find('.price-level').html();
+			if (price_arr.indexOf(pPrice) == -1){
+				$(".may-tinh-bang").get(i).style.display = "none";
+			}
+		}
+	}
+
+	var count = 0;
+	for (var i = 0; i < $(".dien-thoai").size(); i++) {
+		var select = ".dien-thoai:eq(" + i + ")";
+		if ($(select).css('display') != 'none'){
+			count++;
+		}
+	}
+
+	for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+		var select = ".may-tinh-bang:eq(" + i + ")";
+		if ($(select).css('display') != 'none'){
+			count++;
+		}
+	}
+
+	if (count == 0) {
+		$('#no_product_alert').css('display', 'inline-block');
+	} else {
+		$('#no_product_alert').css('display', 'none');
+	}
+
+}
+
+function showAll() {
+	for (var i = 0; i < $(".dien-thoai").size(); i++) {
+		$(".dien-thoai").get(i).style.display = "inline-block";
+	}
+	for (var i = 0; i < $(".may-tinh-bang").size(); i++) {
+		$(".may-tinh-bang").get(i).style.display = "inline-block";
+	}
+}
+
 function showPhone() {
 	$('#page').show();
 	for (var i = 0; i < $(".may-tinh-bang").size(); i++)

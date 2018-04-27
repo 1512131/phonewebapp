@@ -11,7 +11,7 @@ function insertMenuMuaHang() {
 					<img id="logo-image" src="assets/image/logo.png">
 				</a>
 			</div>
-			<form class="navbar-form navbar-left" action="/action_page.php">
+			<form class="navbar-form navbar-left" action="javascript:void(0);">
 				<div class="input-group">
 					<input  id="search-box-mua-hang" type="text" class="form-control" placeholder="Bạn tìm gì...">
 					<div class="input-group-btn">
@@ -58,7 +58,7 @@ function insertMenuMuaHang() {
 					<ul class="dropdown-menu">
 						<li><a href="#" onclick="">Cập nhật thông tin</a></li>
 						<li><a href="#" onclick="">Lịch sử mua hàng</a></li>
-						<li><a href="#" onclick="">Đăng xuất</a></li>
+						<li><a href="index.html" onclick="">Đăng xuất</a></li>
 					</ul>
 				</li>
 			</ul>

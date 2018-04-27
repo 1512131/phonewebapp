@@ -11,7 +11,7 @@ function insertMenu() {
 					<img id="logo-image" src="assets/image/logo.png">
 				</a>
 			</div>
-			<form class="navbar-form navbar-left" action="/action_page.php">
+			<form class="navbar-form navbar-left" action="javascript:void(0);">
 				<div class="input-group">
 					<input  id="search-box" type="text" class="form-control" placeholder="Bạn tìm gì...">
 					<div class="input-group-btn">
@@ -65,6 +65,5 @@ function search() {
 	else {
 		var url ='san-pham.html#search='+$('#search-box').attr("checked", true).val().toLowerCase();
 		$(location).attr('href', url);
-		alert();
 	}
 }

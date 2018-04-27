@@ -39,6 +39,18 @@ $(document).ready(function() {
 		$('#product_producer').val('');
 		showProductGroup(2);
 	});
+
+	$('.order_state').change(function() {
+		var val = $(this).val();
+		var tr = $(this).parent().parent();
+		if (val === 'Chưa giao'){
+			tr.attr('class', 'danger');
+		} else if (val === 'Đang giao'){
+			tr.attr('class', 'warning');
+		} else if (val === 'Đã giao'){
+			tr.attr('class', 'success');
+		}
+	});
 });
 
 

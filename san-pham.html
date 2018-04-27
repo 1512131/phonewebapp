@@ -1,880 +1,988 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Điện thoại - Máy tính bảng</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/menu.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/san-pham.css">
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
-</head>
-<body style="background-color: whitesmoke">
-	<nav id="navbar" class="navbar navbar-inverse navbar-static-top"">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a id="logo-link" class="navbar-brand" href="index.html">
-					<img id="logo-image" src="assets/image/logo.png">
-				</a>
-			</div>
-			<form class="navbar-form navbar-left" action="/action_page.php">
-				<div class="input-group">
-					<input  id="search-box" type="text" class="form-control" placeholder="Bạn tìm gì...">
-					<div class="input-group-btn">
-						<button class="btn btn-default" onclick="searchProduct()">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Điện thoại - Máy tính bảng</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/menu.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/san-pham.css">
+		<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
+	</head>
+	<body style="background-color: whitesmoke">
+		<nav id="navbar" class="navbar navbar-inverse navbar-static-top"">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a id="logo-link" class="navbar-brand" href="index.html">
+						<img id="logo-image" src="assets/image/logo.png">
+					</a>
+				</div>
+				<form class="navbar-form navbar-left" action="javascript:void(0);">
+					<div class="input-group">
+						<input  id="search-box" type="text" class="form-control" placeholder="Bạn tìm gì...">
+						<div class="input-group-btn">
+							<button class="btn btn-default" onclick="searchProduct()">
 							<i class="glyphicon glyphicon-search"></i>
-						</button>
+							</button>
+						</div>
+					</div>
+				</form>
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a id="phone" class="dropdown-toggle" data-toggle="dropdown" href="san-pham.html#load-phone">
+							ĐIỆN THOẠI
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="san-pham.html#load-phone-apple">Apple</a></li>
+							<li><a href="san-pham.html#load-phone-samsung">Samsung</a></li>
+							<li><a href="san-pham.html#load-phone-oppo">Oppo</a></li>
+							<li><a href="san-pham.html#load-phone-sony">Sony</a></li>
+							<li><a href="san-pham.html#load-phone-vivo">Vivo</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a id="tablet" class="dropdown-toggle" data-toggle="dropdown" href="san-pham.html#load-tablet">
+							MÁY TÍNH BẢNG
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="san-pham.html#load-tablet-apple">Apple</a></li>
+							<li><a href="san-pham.html#load-tablet-samsung">Samsung</a></li>
+							<li><a href="san-pham.html#load-tablet-lenovo">Lenovo</a></li>
+							<li><a href="san-pham.html#load-tablet-masstel">Masstel</a></li>
+							<li><a href="san-pham.html#load-tablet-huawei">Huawei</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="dang-ki.html">ĐĂNG KÍ</a></li>
+					<li><a href="dang-nhap.html">ĐĂNG NHẬP</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="col-lg-2 well" style="background-color: white">
+				<input type="text" id="filter_name" class="form-control" placeholder="Nhập tên sản phẩm">
+				<button style="margin: 10px 0; width: 100%" class="btn btn-success" onclick="searchByFilter()">
+				<i class="glyphicon glyphicon-search"></i>Tìm kiếm
+				</button>
+				<button style="margin: 5px 0; width: 100%" class="btn btn-default" onclick="showAll()">
+				Hiển thị tất cả
+				</button>
+				<h4>Danh mục</h4>
+				<div class="checkbox">
+					<label><input type="checkbox" id="cat_phone"> Điện thoại</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="cat_tablet"> Máy tính bảng</label>
+				</div>
+				<hr>
+				<h4>Nhà sản xuất</h4>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_apple"> Apple</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_samsung"> Samsung</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_oppo"> Oppo</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_sony"> Sony</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_vivo"> Vivo</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_lenovo"> Lenovo</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_masstel"> Masstel</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="pro_huawei"> Huawei</label>
+				</div>
+				<hr>
+				<h4>Chọn khoảng giá</h4>
+				<div class="checkbox">
+					<label><input type="checkbox" id="1m"> Dưới 1 triệu</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="1-5m"> Từ 1-5 triệu</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="5-10m"> Từ 5-10 triệu</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="10-15m"> Từ 10-15 triệu</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="15m"> Trên 15 triệu</label>
+				</div>
+			</div>
+			<div class="col-lg-10">
+				<div id="wrap" class="row">
+					<h4 id="no_product_alert" style="margin-left: 20px; display: none">Không tìm thấy sản phẩm thích hợp!</h4>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">14/1/2018</span>
+							<span class="so-luong-ban hidden">1605</span>
+							<span class="so-luot-xem hidden">6049</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ipx/ipx.png">
+							<div class="card-body">
+								<h5 class="card-title">iPhone X 64GB</h5>
+								<p class="price">
+									<strong>29.990.000₫</strong>
+								</p>
+								<a href="iphone-x.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/12/2017</span>
+							<span class="so-luong-ban hidden">857</span>
+							<span class="so-luot-xem hidden">3478</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ip8+/ip8+.png">
+							<div class="card-body">
+								<h5 class="card-title">iPhone 8 Plus 64GB</h5>
+								<p class="price">
+									<strong>23.990.000₫</strong>
+								</p>
+								<a href="iphone-8-plus.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">6/11/2017</span>
+							<span class="so-luong-ban hidden">345</span>
+							<span class="so-luot-xem hidden">4131</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ip8/ip8.png">
+							<div class="card-body">
+								<h5 class="card-title">iPhone 8 64GB</h5>
+								<p class="price">
+									<strong>20.990.000₫</strong>
+								</p>
+								<a href="iphone-8.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">21/04/2018</span>
+							<span class="so-luong-ban hidden">208</span>
+							<span class="so-luot-xem hidden">3058</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ip7+/ip7+.png">
+							<div class="card-body">
+								<h5 class="card-title">iPhone 7 Plus 32GB</h5>
+								<p class="price">
+									<strong>19.999.000₫</strong>
+								</p>
+								<a href="iphone-7-plus.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">21/04/2017</span>
+							<span class="so-luong-ban hidden">547</span>
+							<span class="so-luot-xem hidden">4683</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ip7/ip7.png">
+							<div class="card-body">
+								<h5 class="card-title">iPhone 7 32GB</h5>
+								<p class="price">
+									<strong>15.999.000₫</strong>
+								</p>
+								<a href="iphone-7.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">6/03/2018</span>
+							<span class="so-luong-ban hidden">608</span>
+							<span class="so-luot-xem hidden">4526</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/sas9+.png">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy S9+</h5>
+								<p class="price">
+									<strong>23.490.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">1/04/2018</span>
+							<span class="so-luong-ban hidden">486</span>
+							<span class="so-luot-xem hidden">3572</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/sas9.png">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy S9</h5>
+								<p class="price">
+									<strong>19.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">15/01/2018</span>
+							<span class="so-luong-ban hidden">328</span>
+							<span class="so-luot-xem hidden">2954</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/saa8+.png">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy S8 Plus</h5>
+								<p class="price">
+									<strong>17.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/01/2018</span>
+							<span class="so-luong-ban hidden">563</span>
+							<span class="so-luot-xem hidden">4565</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/saa8.png">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy S8</h5>
+								<p class="price">
+									<strong>15.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">21/01/2018</span>
+							<span class="so-luong-ban hidden">167</span>
+							<span class="so-luot-xem hidden">1982</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/saN8.png">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy Note 8</h5>
+								<p class="price">
+									<strong>22.490.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">9/02/2018</span>
+							<span class="so-luong-ban hidden">385</span>
+							<span class="so-luot-xem hidden">2832</span>
+							<span class="nha-san-xuat hidden">oppo</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/opf7.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Oppo F7</h5>
+								<p class="price">
+									<strong>7.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">19/12/2017</span>
+							<span class="so-luong-ban hidden">182</span>
+							<span class="so-luot-xem hidden">1862</span>
+							<span class="nha-san-xuat hidden">oppo</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/opf5.png">
+							<div class="card-body">
+								<h5 class="card-title">Oppp F5</h5>
+								<p class="price">
+									<strong>6.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">16/09/2017</span>
+							<span class="so-luong-ban hidden">348</span>
+							<span class="so-luot-xem hidden">3258</span>
+							<span class="nha-san-xuat hidden">oppo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/opf3.png">
+							<div class="card-body">
+								<h5 class="card-title">Oppo F3</h5>
+								<p class="price">
+									<strong>4.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">25/10/2017</span>
+							<span class="so-luong-ban hidden">657</span>
+							<span class="so-luot-xem hidden">8342</span>
+							<span class="nha-san-xuat hidden">oppo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/opf1s.png">
+							<div class="card-body">
+								<h5 class="card-title">Oppo F1s</h5>
+								<p class="price">
+									<strong>4.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">18/7/2017</span>
+							<span class="so-luong-ban hidden">268</span>
+							<span class="so-luot-xem hidden">2430</span>
+							<span class="nha-san-xuat hidden">oppo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/opa83.png">
+							<div class="card-body">
+								<h5 class="card-title">Oppo A83</h5>
+								<p class="price">
+									<strong>4.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">28/2/2018</span>
+							<span class="so-luong-ban hidden">156</span>
+							<span class="so-luot-xem hidden">1862</span>
+							<span class="nha-san-xuat hidden">sony</span>
+							<span class="price-level hidden">10-15m</span>
+							<img class="card-img-top" src="assets/image/soxz1.png">
+							<div class="card-body">
+								<h5 class="card-title">Sony Xperia XZ1</h5>
+								<p class="price">
+									<strong>13.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">22/1/2018</span>
+							<span class="so-luong-ban hidden">196</span>
+							<span class="so-luot-xem hidden">2648</span>
+							<span class="nha-san-xuat hidden">sony</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/soxzp.png">
+							<div class="card-body">
+								<h5 class="card-title">Sony Xperia XZ Premium</h5>
+								<p class="price">
+									<strong>17.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">14/11/2017</span>
+							<span class="so-luong-ban hidden">145</span>
+							<span class="so-luot-xem hidden">1962</span>
+							<span class="nha-san-xuat hidden">sony</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/soxzs.png">
+							<div class="card-body">
+								<h5 class="card-title">Sony Xperia XZs</h5>
+								<p class="price">
+									<strong>9.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">8/10/2017</span>
+							<span class="so-luong-ban hidden">82</span>
+							<span class="so-luot-xem hidden">1285</span>
+							<span class="nha-san-xuat hidden">sony</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/soxau.png">
+							<div class="card-body">
+								<h5 class="card-title">Sony Xperia XA Ultra</h5>
+								<p class="price">
+									<strong>6.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">16/8/2017</span>
+							<span class="so-luong-ban hidden">503</span>
+							<span class="so-luot-xem hidden">4582</span>
+							<span class="nha-san-xuat hidden">sony</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/sol1d.png">
+							<div class="card-body">
+								<h5 class="card-title">Sony Xperia L1 Dual</h5>
+								<p class="price">
+									<strong>3.590.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">13/2/2018</span>
+							<span class="so-luong-ban hidden">208</span>
+							<span class="so-luot-xem hidden">1835</span>
+							<span class="nha-san-xuat hidden">vivo</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/viv9.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Vivo V9</h5>
+								<p class="price">
+									<strong>7.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">3/1/2018</span>
+							<span class="so-luong-ban hidden">228</span>
+							<span class="so-luot-xem hidden">1735</span>
+							<span class="nha-san-xuat hidden">vivo</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/viv7+.png">
+							<div class="card-body">
+								<h5 class="card-title">Vivo V7+</h5>
+								<p class="price">
+									<strong>7.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">3/12/2017</span>
+							<span class="so-luong-ban hidden">157</span>
+							<span class="so-luot-xem hidden">1204</span>
+							<span class="nha-san-xuat hidden">vivo</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/viv5s.png">
+							<div class="card-body">
+								<h5 class="card-title">Vivo V7+</h5>
+								<p class="price">
+									<strong>6.690.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">18/11/2017</span>
+							<span class="so-luong-ban hidden">185</span>
+							<span class="so-luot-xem hidden">1351</span>
+							<span class="nha-san-xuat hidden">vivo</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/viy69.png">
+							<div class="card-body">
+								<h5 class="card-title">Vivo Y69</h5>
+								<p class="price">
+									<strong>5.490.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 dien-thoai">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">23/8/2017</span>
+							<span class="so-luong-ban hidden">235</span>
+							<span class="so-luot-xem hidden">2054</span>
+							<span class="nha-san-xuat hidden">vivo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/viy55.png">
+							<div class="card-body">
+								<h5 class="card-title">Vivo Y55</h5>
+								<p class="price">
+									<strong>3.990.000₫</strong>
+								</p>
+								<a href="#" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">21/10/2017</span>
+							<span class="so-luong-ban hidden">618</span>
+							<span class="so-luot-xem hidden">3019</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ipadpro105wifi4g512.jpg">
+							<div class="card-body">
+								<h5 class="card-title">iPad Pro 12.9 WI-FI 4G 512GB</h5>
+								<p class="price">
+									<strong>32.999.000₫</strong>
+								</p>
+								<a href="iPad-Pro-12.9.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">15/7/2017</span>
+							<span class="so-luong-ban hidden">1005</span>
+							<span class="so-luot-xem hidden">4019</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ipadpro.jpg">
+							<div class="card-body">
+								<h5 class="card-title">iPad Pro 10.5 inch Wifi 64GB</h5>
+								<p class="price">
+									<strong>16.990.000₫</strong>
+								</p>
+								<a href="iPad-Pro-10.5.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">27/8/2017</span>
+							<span class="so-luong-ban hidden">824</span>
+							<span class="so-luot-xem hidden">3216</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">15m</span>
+							<img class="card-img-top" src="assets/image/ipadair2cellular.jpg">
+							<div class="card-body">
+								<h5 class="card-title">iPad Air 2 Cellular 128GB</h5>
+								<p class="price">
+									<strong>15.490.000₫</strong>
+								</p>
+								<a href="iPad-Air-2-Cellular.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/5/2017</span>
+							<span class="so-luong-ban hidden">925</span>
+							<span class="so-luot-xem hidden">3421</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">10-15m</span>
+							<img class="card-img-top" src="assets/image/ipadwificellular.jpg">
+							<div class="card-body">
+								<h5 class="card-title">iPad Wifi Cellular 128GB</h5>
+								<p class="price">
+									<strong>14.990.000₫</strong>
+								</p>
+								<a href="iPad-Wifi-Cellular.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">21/3/2017</span>
+							<span class="so-luong-ban hidden">512</span>
+							<span class="so-luot-xem hidden">3142</span>
+							<span class="nha-san-xuat hidden">apple</span>
+							<span class="price-level hidden">10-15m</span>
+							<img class="card-img-top" src="assets/image/ipadmini4wifi.jpg">
+							<div class="card-body">
+								<h5 class="card-title">iPad Mini 4 Wifi 128GB</h5>
+								<p class="price">
+									<strong>10.990.000₫</strong>
+								</p>
+								<a href="iPad-Mini-4-Wifi.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/10/2016</span>
+							<span class="so-luong-ban hidden">524</span>
+							<span class="so-luot-xem hidden">4106</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/sataba6.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy Tab A6 10.1 Spen</h5>
+								<p class="price">
+									<strong>7.990.000₫</strong>
+								</p>
+								<a href="samsungtab-A6-10.1-spen.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/11/2017</span>
+							<span class="so-luong-ban hidden">474</span>
+							<span class="so-luot-xem hidden">3342</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/sataba8.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy Tab A 8.0</h5>
+								<p class="price">
+									<strong>5.490.000₫</strong>
+								</p>
+								<a href="samsungtab-A8.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">16/10/2015</span>
+							<span class="so-luong-ban hidden">321</span>
+							<span class="so-luot-xem hidden">2817</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/satabe96.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy Tab E 9.6</h5>
+								<p class="price">
+									<strong>4.490.000₫</strong>
+								</p>
+								<a href="samsungtab-E96.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">13/4/2016</span>
+							<span class="so-luong-ban hidden">521</span>
+							<span class="so-luot-xem hidden">4132</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/sataba670.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy Tab A6 7.0</h5>
+								<p class="price">
+									<strong>3.590.000₫</strong>
+								</p>
+								<a href="samsungtab-A6-7.0.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/2/2018</span>
+							<span class="so-luong-ban hidden">634</span>
+							<span class="so-luot-xem hidden">3908</span>
+							<span class="nha-san-xuat hidden">samsung</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/satabA.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Samsung Galaxy Tab A SM-T285</h5>
+								<p class="price">
+									<strong>3.590.000₫</strong>
+								</p>
+								<a href="samsungtab-A-SM-T285.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/12/2016</span>
+							<span class="so-luong-ban hidden">1015</span>
+							<span class="so-luot-xem hidden">4009</span>
+							<span class="nha-san-xuat hidden">lenovo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/letab3a8za180001.jpg">
+							<div class="card-body">
+								<h5 class="card-title">LENOVO TAB 3 A8 ZA180001</h5>
+								<p class="price">
+									<strong>3.190.000₫</strong>
+								</p>
+								<a href="lenovotab-3-A8-ZA180001.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/1/2017</span>
+							<span class="so-luong-ban hidden">924</span>
+							<span class="so-luot-xem hidden">3168</span>
+							<span class="nha-san-xuat hidden">lenovo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/letab3a8za180071.jpg">
+							<div class="card-body">
+								<h5 class="card-title">LENOVO TAB 3 A8 ZA180071</h5>
+								<p class="price">
+									<strong>3.190.000₫</strong>
+								</p>
+								<a href="lenovotab-3-A8-ZA180071.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/3/2017</span>
+							<span class="so-luong-ban hidden">825</span>
+							<span class="so-luot-xem hidden">3021</span>
+							<span class="nha-san-xuat hidden">lenovo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/letab3710i.jpg">
+							<div class="card-body">
+								<h5 class="card-title">LENOVO TAB 3 710I MT8321</h5>
+								<p class="price">
+									<strong>2.190.000₫</strong>
+								</p>
+								<a href="lenovotab-3-710I-MT8321.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">14/10/2017</span>
+							<span class="so-luong-ban hidden">718</span>
+							<span class="so-luot-xem hidden">3218</span>
+							<span class="nha-san-xuat hidden">lenovo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/letab3730xza130063.jpg">
+							<div class="card-body">
+								<h5 class="card-title">LENOVO TAB 3 730X ZA130063</h5>
+								<p class="price">
+									<strong>2.290.000₫</strong>
+								</p>
+								<a href="lenovotab-3-730X-ZA130063.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/11/2017</span>
+							<span class="so-luong-ban hidden">521</span>
+							<span class="so-luot-xem hidden">3104</span>
+							<span class="nha-san-xuat hidden">lenovo</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/letab3730xza130086.jpg">
+							<div class="card-body">
+								<h5 class="card-title">LENOVO TAB 3 730X ZA130086</h5>
+								<p class="price">
+									<strong>2.290.000₫</strong>
+								</p>
+								<a href="lenovotab-3-730X-ZA130086.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">25/9/2015</span>
+							<span class="so-luong-ban hidden">1015</span>
+							<span class="so-luot-xem hidden">4009</span>
+							<span class="nha-san-xuat hidden">masstel</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/matab10.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Masstel Tab 10</h5>
+								<p class="price">
+									<strong>2.790.000₫</strong>
+								</p>
+								<a href="massteltab-10.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">5/4/2015</span>
+							<span class="so-luong-ban hidden">924</span>
+							<span class="so-luot-xem hidden">3168</span>
+							<span class="nha-san-xuat hidden">masstel</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/matab8.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Masstel Tab 8</h5>
+								<p class="price">
+									<strong>2.290.000₫</strong>
+								</p>
+								<a href="massteltab-8.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/1/2015</span>
+							<span class="so-luong-ban hidden">825</span>
+							<span class="so-luot-xem hidden">3021</span>
+							<span class="nha-san-xuat hidden">masstel</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/matab7lte.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Masstel Tab 7 LTE</h5>
+								<p class="price">
+									<strong>2.090.000₫</strong>
+								</p>
+								<a href="massteltab-7-LTE.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">10/1/2015</span>
+							<span class="so-luong-ban hidden">318</span>
+							<span class="so-luot-xem hidden">3315</span>
+							<span class="nha-san-xuat hidden">masstel</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/matab7.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Masstel Tab 7</h5>
+								<p class="price">
+									<strong>1.790.000₫</strong>
+								</p>
+								<a href="massteltab-7.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/5/2017</span>
+							<span class="so-luong-ban hidden">421</span>
+							<span class="so-luot-xem hidden">2140</span>
+							<span class="nha-san-xuat hidden">masstel</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/matab825.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Masstel Tab 825</h5>
+								<p class="price">
+									<strong>2.190.000₫</strong>
+								</p>
+								<a href="massteltab-825.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">29/6/2017</span>
+							<span class="so-luong-ban hidden">625</span>
+							<span class="so-luot-xem hidden">3009</span>
+							<span class="nha-san-xuat hidden">huawei</span>
+							<span class="price-level hidden">5-10m</span>
+							<img class="card-img-top" src="assets/image/hwtabm3.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Huawei MediaPad M3 8.0</h5>
+								<p class="price">
+									<strong>5.990.000₫</strong>
+								</p>
+								<a href="huaweitab-M3-8.0.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">19/7/2017</span>
+							<span class="so-luong-ban hidden">724</span>
+							<span class="so-luot-xem hidden">2168</span>
+							<span class="nha-san-xuat hidden">huawei</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/hwtabt3.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Huawei MediaPad T3 10</h5>
+								<p class="price">
+									<strong>4.990.000₫</strong>
+								</p>
+								<a href="huaweitab-T3-10.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/6/2017</span>
+							<span class="so-luong-ban hidden">825</span>
+							<span class="so-luot-xem hidden">3125</span>
+							<span class="nha-san-xuat hidden">huawei</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/hwtabt380.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Huawei MediaPad T3 8.0</h5>
+								<p class="price">
+									<strong>3.990.000₫</strong>
+								</p>
+								<a href="huaweitab-T3-8.0.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">7/9/2014</span>
+							<span class="so-luong-ban hidden">818</span>
+							<span class="so-luot-xem hidden">4315</span>
+							<span class="nha-san-xuat hidden">huawei</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/hwtabt18.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Huawei MediaPad T1 8.0</h5>
+								<p class="price">
+									<strong>2.990.000₫</strong>
+								</p>
+								<a href="huaweitab-T1-8.0.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 may-tinh-bang">
+						<div class="card">
+							<span class="ngay-tiep-nhan hidden">12/8/2014</span>
+							<span class="so-luong-ban hidden">921</span>
+							<span class="so-luot-xem hidden">3140</span>
+							<span class="nha-san-xuat hidden">huawei</span>
+							<span class="price-level hidden">1-5m</span>
+							<img class="card-img-top" src="assets/image/hwtabt1701u.jpg">
+							<div class="card-body">
+								<h5 class="card-title">Huawei MediaPad T1-701u</h5>
+								<p class="price">
+									<strong>2.090.000₫</strong>
+								</p>
+								<a href="huaweitab-T1-701u.html" class="btn btn-primary">Chi tiết</a>
+							</div>
+						</div>
 					</div>
 				</div>
-			</form>
-			<ul class="nav navbar-nav">
-				<li class="dropdown">
-					<a id="phone" class="dropdown-toggle" data-toggle="dropdown" href="san-pham.html#load-phone">
-						ĐIỆN THOẠI
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="san-pham.html#load-phone-apple">Apple</a></li>
-						<li><a href="san-pham.html#load-phone-samsung">Samsung</a></li>
-						<li><a href="san-pham.html#load-phone-oppo">Oppo</a></li>
-						<li><a href="san-pham.html#load-phone-sony">Sony</a></li>
-						<li><a href="san-pham.html#load-phone-vivo">Vivo</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a id="tablet" class="dropdown-toggle" data-toggle="dropdown" href="san-pham.html#load-tablet">
-						MÁY TÍNH BẢNG
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="san-pham.html#load-tablet-apple">Apple</a></li>
-						<li><a href="san-pham.html#load-tablet-samsung">Samsung</a></li>
-						<li><a href="san-pham.html#load-tablet-lenovo">Lenovo</a></li>
-						<li><a href="san-pham.html#load-tablet-masstel">Masstel</a></li>
-						<li><a href="san-pham.html#load-tablet-huawei">Huawei</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="dang-ki.html">ĐĂNG KÍ</a></li>
-				<li><a href="dang-nhap.html">ĐĂNG NHẬP</a></li>
-			</ul>
+			</div>
 		</div>
-	</nav>
-	<div class="container">
-		<div id="wrap" class="row">
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">14/1/2018</span>
-					<span class="so-luong-ban hidden">1605</span>
-					<span class="so-luot-xem hidden">6049</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipx/ipx.png">
-					<div class="card-body">
-						<h5 class="card-title">iPhone X 64GB</h5>
-						<p class="price">
-							<strong>29.990.000₫</strong>
-						</p>
-						<a href="iphone-x.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/12/2017</span>
-					<span class="so-luong-ban hidden">857</span>
-					<span class="so-luot-xem hidden">3478</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip8+/ip8+.png">
-					<div class="card-body">
-						<h5 class="card-title">iPhone 8 Plus 64GB</h5>
-						<p class="price">
-							<strong>23.990.000₫</strong>
-						</p>
-						<a href="iphone-8-plus.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">6/11/2017</span>
-					<span class="so-luong-ban hidden">345</span>
-					<span class="so-luot-xem hidden">4131</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip8/ip8.png">
-					<div class="card-body">
-						<h5 class="card-title">iPhone 8 64GB</h5>
-						<p class="price">
-							<strong>20.990.000₫</strong>
-						</p>
-						<a href="iphone-8.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">21/04/2018</span>
-					<span class="so-luong-ban hidden">208</span>
-					<span class="so-luot-xem hidden">3058</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip7+/ip7+.png">
-					<div class="card-body">
-						<h5 class="card-title">iPhone 7 Plus 32GB</h5>
-						<p class="price">
-							<strong>19.999.000₫</strong>
-						</p>
-						<a href="iphone-7-plus.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">21/04/2017</span>
-					<span class="so-luong-ban hidden">547</span>
-					<span class="so-luot-xem hidden">4683</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ip7/ip7.png">
-					<div class="card-body">
-						<h5 class="card-title">iPhone 7 32GB</h5>
-						<p class="price">
-							<strong>15.999.000₫</strong>
-						</p>
-						<a href="iphone-7.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">6/03/2018</span>
-					<span class="so-luong-ban hidden">608</span>
-					<span class="so-luot-xem hidden">4526</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/sas9+.png">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy S9+</h5>
-						<p class="price">
-							<strong>23.490.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">1/04/2018</span>
-					<span class="so-luong-ban hidden">486</span>
-					<span class="so-luot-xem hidden">3572</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/sas9.png">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy S9</h5>
-						<p class="price">
-							<strong>19.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">15/01/2018</span>
-					<span class="so-luong-ban hidden">328</span>
-					<span class="so-luot-xem hidden">2954</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/saa8+.png">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy S8 Plus</h5>
-						<p class="price">
-							<strong>17.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/01/2018</span>
-					<span class="so-luong-ban hidden">563</span>
-					<span class="so-luot-xem hidden">4565</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/saa8.png">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy S8</h5>
-						<p class="price">
-							<strong>15.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">21/01/2018</span>
-					<span class="so-luong-ban hidden">167</span>
-					<span class="so-luot-xem hidden">1982</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/saN8.png">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy Note 8</h5>
-						<p class="price">
-							<strong>22.490.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">9/02/2018</span>
-					<span class="so-luong-ban hidden">385</span>
-					<span class="so-luot-xem hidden">2832</span>
-					<span class="nha-san-xuat hidden">oppo</span>
-					<img class="card-img-top" src="assets/image/opf7.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Oppo F7</h5>
-						<p class="price">
-							<strong>7.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">19/12/2017</span>
-					<span class="so-luong-ban hidden">182</span>
-					<span class="so-luot-xem hidden">1862</span>
-					<span class="nha-san-xuat hidden">oppo</span>
-					<img class="card-img-top" src="assets/image/opf5.png">
-					<div class="card-body">
-						<h5 class="card-title">Oppp F5</h5>
-						<p class="price">
-							<strong>6.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">16/09/2017</span>
-					<span class="so-luong-ban hidden">348</span>
-					<span class="so-luot-xem hidden">3258</span>
-					<span class="nha-san-xuat hidden">oppo</span>
-					<img class="card-img-top" src="assets/image/opf3.png">
-					<div class="card-body">
-						<h5 class="card-title">Oppo F3</h5>
-						<p class="price">
-							<strong>4.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">25/10/2017</span>
-					<span class="so-luong-ban hidden">657</span>
-					<span class="so-luot-xem hidden">8342</span>
-					<span class="nha-san-xuat hidden">oppo</span>
-					<img class="card-img-top" src="assets/image/opf1s.png">
-					<div class="card-body">
-						<h5 class="card-title">Oppo F1s</h5>
-						<p class="price">
-							<strong>4.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">18/7/2017</span>
-					<span class="so-luong-ban hidden">268</span>
-					<span class="so-luot-xem hidden">2430</span>
-					<span class="nha-san-xuat hidden">oppo</span>
-					<img class="card-img-top" src="assets/image/opa83.png">
-					<div class="card-body">
-						<h5 class="card-title">Oppo A83</h5>
-						<p class="price">
-							<strong>4.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">28/2/2018</span>
-					<span class="so-luong-ban hidden">156</span>
-					<span class="so-luot-xem hidden">1862</span>
-					<span class="nha-san-xuat hidden">sony</span>
-					<img class="card-img-top" src="assets/image/soxz1.png">
-					<div class="card-body">
-						<h5 class="card-title">Sony Xperia XZ1</h5>
-						<p class="price">
-							<strong>13.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">22/1/2018</span>
-					<span class="so-luong-ban hidden">196</span>
-					<span class="so-luot-xem hidden">2648</span>
-					<span class="nha-san-xuat hidden">sony</span>
-					<img class="card-img-top" src="assets/image/soxzp.png">
-					<div class="card-body">
-						<h5 class="card-title">Sony Xperia XZ Premium</h5>
-						<p class="price">
-							<strong>17.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">14/11/2017</span>
-					<span class="so-luong-ban hidden">145</span>
-					<span class="so-luot-xem hidden">1962</span>
-					<span class="nha-san-xuat hidden">sony</span>
-					<img class="card-img-top" src="assets/image/soxzs.png">
-					<div class="card-body">
-						<h5 class="card-title">Sony Xperia XZs</h5>
-						<p class="price">
-							<strong>9.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">8/10/2017</span>
-					<span class="so-luong-ban hidden">82</span>
-					<span class="so-luot-xem hidden">1285</span>
-					<span class="nha-san-xuat hidden">sony</span>
-					<img class="card-img-top" src="assets/image/soxau.png">
-					<div class="card-body">
-						<h5 class="card-title">Sony Xperia XA Ultra</h5>
-						<p class="price">
-							<strong>6.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">16/8/2017</span>
-					<span class="so-luong-ban hidden">503</span>
-					<span class="so-luot-xem hidden">4582</span>
-					<span class="nha-san-xuat hidden">sony</span>
-					<img class="card-img-top" src="assets/image/sol1d.png">
-					<div class="card-body">
-						<h5 class="card-title">Sony Xperia L1 Dual</h5>
-						<p class="price">
-							<strong>3.590.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">13/2/2018</span>
-					<span class="so-luong-ban hidden">208</span>
-					<span class="so-luot-xem hidden">1835</span>
-					<span class="nha-san-xuat hidden">vivo</span>
-					<img class="card-img-top" src="assets/image/viv9.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Vivo V9</h5>
-						<p class="price">
-							<strong>7.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">3/1/2018</span>
-					<span class="so-luong-ban hidden">228</span>
-					<span class="so-luot-xem hidden">1735</span>
-					<span class="nha-san-xuat hidden">vivo</span>
-					<img class="card-img-top" src="assets/image/viv7+.png">
-					<div class="card-body">
-						<h5 class="card-title">Vivo V7+</h5>
-						<p class="price">
-							<strong>7.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">3/12/2017</span>
-					<span class="so-luong-ban hidden">157</span>
-					<span class="so-luot-xem hidden">1204</span>
-					<span class="nha-san-xuat hidden">vivo</span>
-					<img class="card-img-top" src="assets/image/viv5s.png">
-					<div class="card-body">
-						<h5 class="card-title">Vivo V7+</h5>
-						<p class="price">
-							<strong>6.690.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">18/11/2017</span>
-					<span class="so-luong-ban hidden">185</span>
-					<span class="so-luot-xem hidden">1351</span>
-					<span class="nha-san-xuat hidden">vivo</span>
-					<img class="card-img-top" src="assets/image/viy69.png">
-					<div class="card-body">
-						<h5 class="card-title">Vivo Y69</h5>
-						<p class="price">
-							<strong>5.490.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 dien-thoai">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">23/8/2017</span>
-					<span class="so-luong-ban hidden">235</span>
-					<span class="so-luot-xem hidden">2054</span>
-					<span class="nha-san-xuat hidden">vivo</span>
-					<img class="card-img-top" src="assets/image/viy55.png">
-					<div class="card-body">
-						<h5 class="card-title">Vivo Y55</h5>
-						<p class="price">
-							<strong>3.990.000₫</strong>
-						</p>
-						<a href="#" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">21/10/2017</span>
-					<span class="so-luong-ban hidden">618</span>
-					<span class="so-luot-xem hidden">3019</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipadpro105wifi4g512.jpg">
-					<div class="card-body">
-						<h5 class="card-title">iPad Pro 12.9 WI-FI 4G 512GB</h5>
-						<p class="price">
-							<strong>32.999.000₫</strong>
-						</p>
-						<a href="iPad-Pro-12.9.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">15/7/2017</span>
-					<span class="so-luong-ban hidden">1005</span>
-					<span class="so-luot-xem hidden">4019</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipadpro.jpg">
-					<div class="card-body">
-						<h5 class="card-title">iPad Pro 10.5 inch Wifi 64GB</h5>
-						<p class="price">
-							<strong>16.990.000₫</strong>
-						</p>
-						<a href="iPad-Pro-10.5.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">27/8/2017</span>
-					<span class="so-luong-ban hidden">824</span>
-					<span class="so-luot-xem hidden">3216</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipadair2cellular.jpg">
-					<div class="card-body">
-						<h5 class="card-title">iPad Air 2 Cellular 128GB</h5>
-						<p class="price">
-							<strong>15.490.000₫</strong>
-						</p>
-						<a href="iPad-Air-2-Cellular.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/5/2017</span>
-					<span class="so-luong-ban hidden">925</span>
-					<span class="so-luot-xem hidden">3421</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipadwificellular.jpg">
-					<div class="card-body">
-						<h5 class="card-title">iPad Wifi Cellular 128GB</h5>
-						<p class="price">
-							<strong>14.990.000₫</strong>
-						</p>
-						<a href="iPad-Wifi-Cellular.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">21/3/2017</span>
-					<span class="so-luong-ban hidden">512</span>
-					<span class="so-luot-xem hidden">3142</span>
-					<span class="nha-san-xuat hidden">apple</span>
-					<img class="card-img-top" src="assets/image/ipadmini4wifi.jpg">
-					<div class="card-body">
-						<h5 class="card-title">iPad Mini 4 Wifi 128GB</h5>
-						<p class="price">
-							<strong>10.990.000₫</strong>
-						</p>
-						<a href="iPad-Mini-4-Wifi.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/10/2016</span>
-					<span class="so-luong-ban hidden">524</span>
-					<span class="so-luot-xem hidden">4106</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/sataba6.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy Tab A6 10.1 Spen</h5>
-						<p class="price">
-							<strong>7.990.000₫</strong>
-						</p>
-						<a href="samsungtab-A6-10.1-spen.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/11/2017</span>
-					<span class="so-luong-ban hidden">474</span>
-					<span class="so-luot-xem hidden">3342</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/sataba8.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy Tab A 8.0</h5>
-						<p class="price">
-							<strong>5.490.000₫</strong>
-						</p>
-						<a href="samsungtab-A8.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">16/10/2015</span>
-					<span class="so-luong-ban hidden">321</span>
-					<span class="so-luot-xem hidden">2817</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/satabe96.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy Tab E 9.6</h5>
-						<p class="price">
-							<strong>4.490.000₫</strong>
-						</p>
-						<a href="samsungtab-E96.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">13/4/2016</span>
-					<span class="so-luong-ban hidden">521</span>
-					<span class="so-luot-xem hidden">4132</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/sataba670.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy Tab A6 7.0</h5>
-						<p class="price">
-							<strong>3.590.000₫</strong>
-						</p>
-						<a href="samsungtab-A6-7.0.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/2/2018</span>
-					<span class="so-luong-ban hidden">634</span>
-					<span class="so-luot-xem hidden">3908</span>
-					<span class="nha-san-xuat hidden">samsung</span>
-					<img class="card-img-top" src="assets/image/satabA.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Samsung Galaxy Tab A SM-T285</h5>
-						<p class="price">
-							<strong>3.590.000₫</strong>
-						</p>
-						<a href="samsungtab-A-SM-T285.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/12/2016</span>
-					<span class="so-luong-ban hidden">1015</span>
-					<span class="so-luot-xem hidden">4009</span>
-					<span class="nha-san-xuat hidden">lenovo</span>
-					<img class="card-img-top" src="assets/image/letab3a8za180001.jpg">
-					<div class="card-body">
-						<h5 class="card-title">LENOVO TAB 3 A8 ZA180001</h5>
-						<p class="price">
-							<strong>3.190.000₫</strong>
-						</p>
-						<a href="lenovotab-3-A8-ZA180001.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/1/2017</span>
-					<span class="so-luong-ban hidden">924</span>
-					<span class="so-luot-xem hidden">3168</span>
-					<span class="nha-san-xuat hidden">lenovo</span>
-					<img class="card-img-top" src="assets/image/letab3a8za180071.jpg">
-					<div class="card-body">
-						<h5 class="card-title">LENOVO TAB 3 A8 ZA180071</h5>
-						<p class="price">
-							<strong>3.190.000₫</strong>
-						</p>
-						<a href="lenovotab-3-A8-ZA180071.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/3/2017</span>
-					<span class="so-luong-ban hidden">825</span>
-					<span class="so-luot-xem hidden">3021</span>
-					<span class="nha-san-xuat hidden">lenovo</span>
-					<img class="card-img-top" src="assets/image/letab3710i.jpg">
-					<div class="card-body">
-						<h5 class="card-title">LENOVO TAB 3 710I MT8321</h5>
-						<p class="price">
-							<strong>2.190.000₫</strong>
-						</p>
-						<a href="lenovotab-3-710I-MT8321.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">14/10/2017</span>
-					<span class="so-luong-ban hidden">718</span>
-					<span class="so-luot-xem hidden">3218</span>
-					<span class="nha-san-xuat hidden">lenovo</span>
-					<img class="card-img-top" src="assets/image/letab3730xza130063.jpg">
-					<div class="card-body">
-						<h5 class="card-title">LENOVO TAB 3 730X ZA130063</h5>
-						<p class="price">
-							<strong>2.290.000₫</strong>
-						</p>
-						<a href="lenovotab-3-730X-ZA130063.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/11/2017</span>
-					<span class="so-luong-ban hidden">521</span>
-					<span class="so-luot-xem hidden">3104</span>
-					<span class="nha-san-xuat hidden">lenovo</span>
-					<img class="card-img-top" src="assets/image/letab3730xza130086.jpg">
-					<div class="card-body">
-						<h5 class="card-title">LENOVO TAB 3 730X ZA130086</h5>
-						<p class="price">
-							<strong>2.290.000₫</strong>
-						</p>
-						<a href="lenovotab-3-730X-ZA130086.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">25/9/2015</span>
-					<span class="so-luong-ban hidden">1015</span>
-					<span class="so-luot-xem hidden">4009</span>
-					<span class="nha-san-xuat hidden">masstel</span>
-					<img class="card-img-top" src="assets/image/matab10.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Masstel Tab 10</h5>
-						<p class="price">
-							<strong>2.790.000₫</strong>
-						</p>
-						<a href="massteltab-10.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">5/4/2015</span>
-					<span class="so-luong-ban hidden">924</span>
-					<span class="so-luot-xem hidden">3168</span>
-					<span class="nha-san-xuat hidden">masstel</span>
-					<img class="card-img-top" src="assets/image/matab8.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Masstel Tab 8</h5>
-						<p class="price">
-							<strong>2.290.000₫</strong>
-						</p>
-						<a href="massteltab-8.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/1/2015</span>
-					<span class="so-luong-ban hidden">825</span>
-					<span class="so-luot-xem hidden">3021</span>
-					<span class="nha-san-xuat hidden">masstel</span>
-					<img class="card-img-top" src="assets/image/matab7lte.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Masstel Tab 7 LTE</h5>
-						<p class="price">
-							<strong>2.090.000₫</strong>
-						</p>
-						<a href="massteltab-7-LTE.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">10/1/2015</span>
-					<span class="so-luong-ban hidden">318</span>
-					<span class="so-luot-xem hidden">3315</span>
-					<span class="nha-san-xuat hidden">masstel</span>
-					<img class="card-img-top" src="assets/image/matab7.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Masstel Tab 7</h5>
-						<p class="price">
-							<strong>1.790.000₫</strong>
-						</p>
-						<a href="massteltab-7.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/5/2017</span>
-					<span class="so-luong-ban hidden">421</span>
-					<span class="so-luot-xem hidden">2140</span>
-					<span class="nha-san-xuat hidden">masstel</span>
-					<img class="card-img-top" src="assets/image/matab825.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Masstel Tab 825</h5>
-						<p class="price">
-							<strong>2.190.000₫</strong>
-						</p>
-						<a href="massteltab-825.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">29/6/2017</span>
-					<span class="so-luong-ban hidden">625</span>
-					<span class="so-luot-xem hidden">3009</span>
-					<span class="nha-san-xuat hidden">huawei</span>
-					<img class="card-img-top" src="assets/image/hwtabm3.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Huawei MediaPad M3 8.0</h5>
-						<p class="price">
-							<strong>5.990.000₫</strong>
-						</p>
-						<a href="huaweitab-M3-8.0.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">19/7/2017</span>
-					<span class="so-luong-ban hidden">724</span>
-					<span class="so-luot-xem hidden">2168</span>
-					<span class="nha-san-xuat hidden">huawei</span>
-					<img class="card-img-top" src="assets/image/hwtabt3.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Huawei MediaPad T3 10</h5>
-						<p class="price">
-							<strong>4.990.000₫</strong>
-						</p>
-						<a href="huaweitab-T3-10.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/6/2017</span>
-					<span class="so-luong-ban hidden">825</span>
-					<span class="so-luot-xem hidden">3125</span>
-					<span class="nha-san-xuat hidden">huawei</span>
-					<img class="card-img-top" src="assets/image/hwtabt380.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Huawei MediaPad T3 8.0</h5>
-						<p class="price">
-							<strong>3.990.000₫</strong>
-						</p>
-						<a href="huaweitab-T3-8.0.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">7/9/2014</span>
-					<span class="so-luong-ban hidden">818</span>
-					<span class="so-luot-xem hidden">4315</span>
-					<span class="nha-san-xuat hidden">huawei</span>
-					<img class="card-img-top" src="assets/image/hwtabt18.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Huawei MediaPad T1 8.0</h5>
-						<p class="price">
-							<strong>2.990.000₫</strong>
-						</p>
-						<a href="huaweitab-T1-8.0.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 may-tinh-bang">
-				<div class="card">
-					<span class="ngay-tiep-nhan hidden">12/8/2014</span>
-					<span class="so-luong-ban hidden">921</span>
-					<span class="so-luot-xem hidden">3140</span>
-					<span class="nha-san-xuat hidden">huawei</span>
-					<img class="card-img-top" src="assets/image/hwtabt1701u.jpg">
-					<div class="card-body">
-						<h5 class="card-title">Huawei MediaPad T1-701u</h5>
-						<p class="price">
-							<strong>2.090.000₫</strong>
-						</p>
-						<a href="huaweitab-T1-701u.html" class="btn btn-primary">Chi tiết</a>
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-	<div id="page" class="button-container">
-		<button id="page1">1</button>
-		<button id="page2">2</button>
-		<button id="page3">3</button>
-	</div>
-	<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
-	<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/menu.js"></script>
-	<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/san-pham.js"></script>
-</body>
+		<div id="page" class="button-container">
+			<button id="page1">1</button>
+			<button id="page2">2</button>
+			<button id="page3">3</button>
+		</div>
+		<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
+		<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/san-pham.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+	</body>
 </html>

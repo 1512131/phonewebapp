@@ -10,7 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
 	</head>
 	<body style="background-color: whitesmoke">
-		<div class="menu"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3" id="btn_list">
@@ -19,6 +18,7 @@
 						<li><button class="dashboard_button" id="btn_2">Quản lý danh mục</button></li>
 						<li><button class="dashboard_button" id="btn_3">Quản lý nhà sản xuất</button></li>
 						<li><button class="dashboard_button" id="btn_4">Quản lý đơn hàng</button></li>
+						<li><button onclick="$(location).attr('href', 'index.html');" class="dashboard_button">Đăng xuất</button></li>
 					</ul>
 				</div>
 				<div class="col-lg-9" id="pane" style="background-color: white">
@@ -246,49 +246,97 @@
 										<td>1</td>
 										<td>P20042018003</td>
 										<td>20/04/2018</td>
-										<td>Chưa giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao" selected>Chưa giao</option>
+												<option value="Đang giao">Đang giao</option>
+												<option value="Đã giao">Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="danger">
 										<td>2</td>
 										<td>P20042018002</td>
 										<td>20/04/2018</td>
-										<td>Chưa giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao" selected>Chưa giao</option>
+												<option value="Đang giao">Đang giao</option>
+												<option value="Đã giao">Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="warning">
 										<td>3</td>
 										<td>P20042018001</td>
 										<td>20/04/2018</td>
-										<td>Đang giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao">Chưa giao</option>
+												<option value="Đang giao" selected>Đang giao</option>
+												<option value="Đã giao">Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="success">
 										<td>4</td>
 										<td>T19042018001</td>
 										<td>19/04/2018</td>
-										<td>Đã giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao">Chưa giao</option>
+												<option value="Đang giao">Đang giao</option>
+												<option value="Đã giao" selected>Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="warning">
 										<td>5</td>
 										<td>T15042018001</td>
 										<td>15/04/2018</td>
-										<td>Đang giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao">Chưa giao</option>
+												<option value="Đang giao" selected>Đang giao</option>
+												<option value="Đã giao">Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="warning">
 										<td>6</td>
 										<td>T14042018003</td>
 										<td>14/04/2018</td>
-										<td>Đang giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao">Chưa giao</option>
+												<option value="Đang giao" selected>Đang giao</option>
+												<option value="Đã giao">Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="success">
 										<td>7</td>
 										<td>M14042018002</td>
 										<td>14/04/2018</td>
-										<td>Đã giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao">Chưa giao</option>
+												<option value="Đang giao">Đang giao</option>
+												<option value="Đã giao" selected>Đã giao</option>
+											</select>
+										</td>
 									</tr>
 									<tr class="danger">
 										<td>8</td>
 										<td>M14042018001</td>
 										<td>14/04/2018</td>
-										<td>Chưa giao</td>
+										<td>
+											<select class="form-control order_state">
+												<option value="Chưa giao" selected>Chưa giao</option>
+												<option value="Đang giao">Đang giao</option>
+												<option value="Đã giao">Đã giao</option>
+											</select>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -300,7 +348,6 @@
 		<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
 		<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/js/menu.js"></script>
 		<script type="text/javascript" src="assets/js/admin.js"></script>
 	</body>
 </html>

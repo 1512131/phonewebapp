@@ -18,6 +18,10 @@
 	width: 400px
 }
 
+#price_filter{
+	width: 100px;
+}
+
 .dropdown:hover>.dropdown-menu {
 	display: block;
 }
