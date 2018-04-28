@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Đăng nhập</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/dang-nhap.css">
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body style="background-color: whitesmoke">
+	<div class="menu"></div>
+	<h3 class="container-custom pane-header">Thay đổi mật khẩu</h3>
+	<div class="container-custom white-background">
+		<form action="" method="post">
+			<div id="password-title">Mật khẩu hiện tại</div>
+			<input  id="password" type="password" class="form-control box" placeholder="1234">
+			<span id="password-message" class="error-message"></span><br>
+			<div id="password-title">Mật khẩu mới</div>
+			<input  id="password" type="password" class="form-control box" placeholder="5678">
+			<span id="password-message" class="error-message"></span><br>
+			<div id="password-title">Nhập lại mật khẩu của bạn</div>
+			<input  id="password" type="password" class="form-control box" placeholder="5678">
+			<span id="password-message" class="error-message"></span><br>
+			<button  id="btn-sign-in" type="button" class="btn btn-success" onclick="signIn()">LƯU THAY ĐỔI</button>
+			<a href="khachhang.html"><button id="btn-sign-in" type="button" class="btn btn-success">
+				CANCEL
+			</button></a>
+		</form>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/menu.js"></script>
+	<script type="text/javascript" src="assets/js/dang-nhap.js"></script>
+</body>
+</html>

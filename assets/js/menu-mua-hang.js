@@ -56,8 +56,8 @@ function insertMenuMuaHang() {
 						TÀI KHOẢN CUSTOMER
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#" onclick="">Cập nhật thông tin</a></li>
-						<li><a href="#" onclick="">Lịch sử mua hàng</a></li>
+						<li><a href="khachhang.html" onclick="">Cập nhật thông tin</a></li>
+						<li><a href="khachhang.html" onclick="">Lịch sử mua hàng</a></li>
 						<li><a href="index.html" onclick="">Đăng xuất</a></li>
 					</ul>
 				</li>
