@@ -7,7 +7,7 @@ function insertMenuMuaHang() {
 	`<nav id="navbar" class="navbar navbar-inverse navbar-static-top"">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a id="logo-link" class="navbar-brand" href="#">
+				<a id="logo-link" class="navbar-brand" href="index-chon-mua.html">
 					<img id="logo-image" src="assets/image/logo.png">
 				</a>
 			</div>
@@ -52,12 +52,12 @@ function insertMenuMuaHang() {
 				<a class="dropdown-toggle" data-toggle="dropdown" href="gio-hang.html">GIỎ HÀNG</a>
 				</li>
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="cap-nhat-thong-tin.html">
 						TÀI KHOẢN CUSTOMER
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="khachhang.html" onclick="">Cập nhật thông tin</a></li>
-						<li><a href="khachhang.html" onclick="">Lịch sử mua hàng</a></li>
+						<li><a href="cap-nhat-thong-tin.html" onclick="">Cập nhật thông tin</a></li>
+						<li><a href="lich-su-mua-hang.html" onclick="">Lịch sử mua hàng</a></li>
 						<li><a href="index.html" onclick="">Đăng xuất</a></li>
 					</ul>
 				</li>
